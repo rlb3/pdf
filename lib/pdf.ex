@@ -1,18 +1,13 @@
 defmodule PDF do
-  @moduledoc """
-  Documentation for PDF.
-  """
+  def source(file) when is_binary(file) do
+    %PDF.Source{path: file}
+  end
 
-  @doc """
-  Hello world.
+  def content(%PDF.Source{path: path}) do
+    content =
+      path
+      |> File.read!()
 
-  ## Examples
-
-      iex> PDF.hello
-      :world
-
-  """
-  def hello do
-    :world
+    %PDF.Source{content: content}
   end
 end

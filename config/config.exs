@@ -28,3 +28,8 @@ use Mix.Config
 # here (which is why it is important to import them last).
 #
 #     import_config "#{Mix.env}.exs"
+
+config :pdf,
+  storage_account_name: "vsatest",
+  storage_access_key:
+    "zR2aK7fDNzcYgUn5UIEZgExpMjnvGN/2TeR1zg1p2cqPejIk6zu1uHr8GTspE4SJu4VYfqEs7L1LgkOSZ1Duiw=="

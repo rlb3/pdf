@@ -8,6 +8,7 @@ defmodule PDF.Application do
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
+      {DynamicSupervisor, name: PDF.Latex.Supervisor, strategy: :one_for_one}
       # Starts a worker by calling: PDF.Worker.start_link(arg)
       # {PDF.Worker, arg},
     ]
